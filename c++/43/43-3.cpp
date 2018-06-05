@@ -3,123 +3,99 @@
 
 using namespace std;
 
-class Memory
-{
+class Memory {
 public:
-    Memory()
-    {
+    Memory() {
         cout << "Memory()" << endl;
     }
-    ~Memory()
-    {
+    ~Memory() {
         cout << "~Memory()" << endl;
     }
 };
 
-class Disk
-{
+class Disk {
 public:
-    Disk()
-    {
+    Disk() {
         cout << "Disk()" << endl;
     }
-    ~Disk()
-    {
+    ~Disk() {
         cout << "~Disk()" << endl;
-    }   
+    }
 };
 
-class CPU
-{
+class CPU {
 public:
-    CPU()
-    {
+    CPU() {
         cout << "CPU()" << endl;
     }
-    ~CPU()
-    {
+    ~CPU() {
         cout << "~CPU()" << endl;
-    }    
+    }
 };
 
-class MainBoard
-{
+class MainBoard {
 public:
-    MainBoard()
-    {
+    MainBoard() {
         cout << "MainBoard()" << endl;
     }
-    ~MainBoard()
-    {
+    ~MainBoard() {
         cout << "~MainBoard()" << endl;
-    }    
+    }
 };
 
-class Computer
-{
+class Computer {
     Memory mMem;
     Disk mDisk;
     CPU mCPU;
     MainBoard mMainBoard;
 public:
-    Computer()
-    {
+    Computer() {
         cout << "Computer()" << endl;
     }
-    void power()
-    {
+    void power() {
         cout << "power()" << endl;
     }
-    void reset()
-    {
+    void reset() {
         cout << "reset()" << endl;
     }
-    ~Computer()
-    {
+    ~Computer() {
         cout << "~Computer()" << endl;
     }
 };
 
-class HPBook : public Computer
-{
+class HPBook : public Computer {
     string mOS;
 public:
-    HPBook()
-    {
+    HPBook() {
         mOS = "Windows 8";
     }
-    void install(string os)
-    {
+    void install(string os) {
         mOS = os;
     }
-    void OS()
-    {
+    void OS() {
         cout << mOS << endl;
     }
 };
 
-class MacBook : public Computer
-{
+class MacBook : public Computer {
 public:
-    void OS()
-    {
+    void OS() {
         cout << "Mac OS" << endl;
     }
 };
 
-int main()
-{   
+int main(int argc, const char* argv[]) {
     HPBook hp;
-    
+
     hp.power();
     hp.install("Ubuntu 16.04 LTS");
     hp.OS();
-    
+
     cout << endl;
-    
+
     MacBook mac;
-    
+
     mac.OS();
-    
-    return 0;
+
+      return 0;
 }
